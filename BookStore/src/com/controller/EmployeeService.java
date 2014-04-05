@@ -1,5 +1,5 @@
 package com.controller;
 
-public class EmployeeService {
+public class EmployeeService extends UserService{
 
 }

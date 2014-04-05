@@ -1,7 +1,6 @@
 package com.model.user;
 
 
-
 import javax.xml.bind.annotation.XmlRegistry;
 
 

@@ -1,6 +1,7 @@
 package com.model.book;
 
 
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -152,5 +153,7 @@ public class Book {
     public void setPrice(double value) {
         this.price = value;
     }
-
+    public String toString(){
+    	return title+"  "+author+"  "+genre+"  "+price;
+    }
 }

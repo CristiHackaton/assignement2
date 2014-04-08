@@ -1,9 +1,11 @@
 package com.model.sell;
 
 
+
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="sell" type="{}sell"/>
+ *         &lt;element name="sell" type="{}sell" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,31 +34,35 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SellList {
 
-    @XmlElement(required = true)
-    protected Sell sell;
+    protected List<Sell> sell;
 
     /**
      * Gets the value of the sell property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Sell }
-     *     
-     */
-    public Sell getSell() {
-        return sell;
-    }
-
-    /**
-     * Sets the value of the sell property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sell property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Sell }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSell().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Sell }
+     * 
+     * 
      */
-    public void setSell(Sell value) {
-        this.sell = value;
+    public List<Sell> getSell() {
+        if (sell == null) {
+            sell = new ArrayList<Sell>();
+        }
+        return this.sell;
     }
 
 }

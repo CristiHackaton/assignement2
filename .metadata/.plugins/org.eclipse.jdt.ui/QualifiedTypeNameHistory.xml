@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.model.book.ObjectFactory"/>
+<fullyQualifiedTypeName name="com.model.sell.SellList"/>
+<fullyQualifiedTypeName name="com.model.book.BookList"/>
+<fullyQualifiedTypeName name="com.model.sell.ObjectFactory"/>
+<fullyQualifiedTypeName name="com.model.sell.Sell"/>
+<fullyQualifiedTypeName name="javax.xml.datatype.XMLGregorianCalendar"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="javax.xml.datatype.DatatypeFactory"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.model.book.Book"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+</qualifiedTypeNameHistroy>

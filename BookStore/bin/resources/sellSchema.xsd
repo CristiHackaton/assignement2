@@ -3,7 +3,7 @@
 <xs:include schemaLocation="bookSchema.xsd" />
 <xs:complexType name="sellList"  >
 	<xs:sequence >
-	<xs:element name="sell" type="sell"/>
+	<xs:element name="sell" type="sell" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 <xs:complexType name="sell">

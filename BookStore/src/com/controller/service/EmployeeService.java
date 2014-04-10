@@ -2,21 +2,45 @@ package com.controller.service;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+
+import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.xml.sax.SAXException;
+
+import com.controller.dataAccess.BookXMLHandler;
+import com.controller.dataAccess.SellXMLHandler;
+import com.controller.dataAccess.UserXMLHandler;
 import com.model.book.Book;
-import com.model.book.BookList;
+import com.model.book.BookListRoot;
 import com.model.sell.ObjectFactory;
 import com.model.sell.Sell;
-import com.model.sell.SellList;
+import com.model.sell.SellListRoot;
+import com.model.user.UserListRoot;
+
 
 public class EmployeeService extends UserService {
-	private SellList sellList;
-	private BookList bookList;
+	private SellListRoot sellList;
+	private BookListRoot bookList;
 	private ObjectFactory sellFactory;
 
+	public EmployeeService(){
+		SellXMLHandler sl=new SellXMLHandler();
+		BookXMLHandler bk=new BookXMLHandler();
+		try {
+			sellList=(SellListRoot)sl.readFromFile();
+			bookList=(BookListRoot)bk.readFromFile();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
 	/**
 	 * 
 	 * @param searchType
@@ -27,7 +51,7 @@ public class EmployeeService extends UserService {
 	 */
 	public ArrayList<Book> searchBook(int searchType, String criterion) {
 		ArrayList<Book> searchList = new ArrayList<>();
-		for (Book book : bookList.getBook()) {
+		for (Book book : bookList.getBookList()) {
 			if (searchType == 0) {
 				if (book.getTitle().contains(criterion)) {
 					searchList.add(book);
@@ -47,10 +71,10 @@ public class EmployeeService extends UserService {
 	}
 
 	public boolean sellBook(Book bookTOsell, int nrSellBooks, String buyer) {
-		int index = bookList.getBook().indexOf(bookTOsell);
-		int remainingBook = bookList.getBook().get(index).getQuantity()
+		int index = bookList.getBookList().indexOf(bookTOsell);
+		int remainingBook = bookList.getBookList().get(index).getQuantity()
 				- nrSellBooks;
-		bookList.getBook().get(index).setQuantity(remainingBook);
+		bookList.getBookList().get(index).setQuantity(remainingBook);
 
 		Sell sale = sellFactory.createSell();
 		Book sellBook = sellFactory.createBook();
@@ -72,7 +96,7 @@ public class EmployeeService extends UserService {
 			return false;
 		}
 
-		sellList.getSell().add(sale);
+		sellList.getSellList().add(sale);
 		return true;
 	}
 }

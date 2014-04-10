@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<userListRoot>
+    <userList>
+        <name>danny</name>
+        <password>danny</password>
+        <type>0</type>
+        <phoneNumber>123243</phoneNumber>
+    </userList>
+    <userList>
+        <name>aly</name>
+        <password>aly</password>
+        <type>0</type>
+        <phoneNumber>123243</phoneNumber>
+    </userList>
+</userListRoot>

@@ -31,11 +31,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BookList }
+     * Create an instance of {@link BookListRoot }
      * 
      */
-    public BookList createBookList() {
-        return new BookList();
+    public BookListRoot createBookListRoot() {
+        return new BookListRoot();
     }
 
     /**

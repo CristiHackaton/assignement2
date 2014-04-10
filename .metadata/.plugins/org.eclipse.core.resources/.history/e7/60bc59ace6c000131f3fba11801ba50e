@@ -1,0 +1,23 @@
+package com.controller.dataAccess;
+
+public class SellXMLHandler extends AbstractXMLHandler {
+
+	@Override
+	public void setXsdPath(String xsdPath) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setXmlDataFile(String xmlDataFile) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setClassToHandle(Class classToWrite) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,6 +1,7 @@
 package com.model.user;
 
 
+
 import javax.xml.bind.annotation.XmlRegistry;
 
 
@@ -30,11 +31,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UserList }
+     * Create an instance of {@link UserListRoot }
      * 
      */
-    public UserList createUserList() {
-        return new UserList();
+    public UserListRoot createUserListRoot() {
+        return new UserListRoot();
     }
 
     /**

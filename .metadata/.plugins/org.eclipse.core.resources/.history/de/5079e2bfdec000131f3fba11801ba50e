@@ -1,0 +1,12 @@
+package com.view;
+
+import javax.swing.JFrame;
+import java.awt.Font;
+
+public class UserScreen extends JFrame{
+	public UserScreen() {
+		setFont(new Font("Cooper Black", Font.PLAIN, 12));
+		setTitle("Hello User!");
+	}
+
+}

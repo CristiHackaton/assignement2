@@ -1,0 +1,32 @@
+package com.controller.dataAccess;
+
+import com.model.book.BookListRoot;
+
+public class BookXMLHandler extends AbstractXMLHandler {
+	private static String XSD_PATH = "D://master//PS//As//BookStore//src//com//resources//bookSchema.xsd";
+    private static String XML_FILE_PATH = "D://master//PS//As//BookStore//src//com//resources//data//books.xml";
+
+    public BookXMLHandler(){
+    	setXmlDataFile(XML_FILE_PATH);
+    	setXsdPath(XSD_PATH);
+    	this.classToHandle = BookListRoot.class;
+    }
+	@Override
+	public void setXsdPath(String xsdPath) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setXmlDataFile(String xmlDataFile) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setClassToHandle(Class classToWrite) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

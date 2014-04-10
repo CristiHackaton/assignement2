@@ -1,6 +1,8 @@
 package com.controller.dataAccess;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
@@ -12,7 +14,6 @@ import javax.xml.validation.SchemaFactory;
 
 import org.xml.sax.SAXException;
 
-import com.model.user.UserList;
 
 public abstract class AbstractXMLHandler {
     protected String xsdPath;
@@ -22,17 +23,24 @@ public abstract class AbstractXMLHandler {
     public void writeToFile(final Object objToWrite) throws JAXBException, SAXException {
 
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = sf.newSchema(new File(xsdPath));
-
-        JAXBContext jc = JAXBContext.newInstance(UserList.class);
+        File file = new File(xsdPath);
+        
+		Schema schema = sf.newSchema(file);
+        
+        JAXBContext jc = JAXBContext.newInstance(classToHandle);
 
         Marshaller marshaller = jc.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshaller.setSchema(schema);
-        marshaller.marshal(objToWrite, System.out);
+        try {
+			marshaller.marshal(objToWrite, new FileOutputStream(new File(xmlDataFile)));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
-    public Object readFromFile(final Object objToWrite) throws JAXBException, SAXException {
+    public Object readFromFile() throws JAXBException, SAXException {
 
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         Schema schema = sf.newSchema(new File(xsdPath));
@@ -41,8 +49,12 @@ public abstract class AbstractXMLHandler {
 
         Unmarshaller unmarshaller = jc.createUnmarshaller();
         unmarshaller.setSchema(schema);
-        Object result = unmarshaller.unmarshal(new File(xmlDataFile));
-        return result;
+        File file = new File(xmlDataFile);
+        if(file.length()!=0){
+        	
+        	Object result = unmarshaller.unmarshal(file);
+        	return result;
+        }return null;
     }
 
     public String getXsdPath() {

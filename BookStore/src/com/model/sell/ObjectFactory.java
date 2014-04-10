@@ -2,11 +2,10 @@ package com.model.sell;
 
 
 
-
 import javax.xml.bind.annotation.XmlRegistry;
 
 import com.model.book.Book;
-import com.model.book.BookList;
+import com.model.book.BookListRoot;
 
 
 /**
@@ -35,11 +34,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SellList }
+     * Create an instance of {@link SellListRoot }
      * 
      */
-    public SellList createSellList() {
-        return new SellList();
+    public SellListRoot createSellListRoot() {
+        return new SellListRoot();
     }
 
     /**
@@ -51,11 +50,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BookList }
+     * Create an instance of {@link BookListRoot }
      * 
      */
-    public BookList createBookList() {
-        return new BookList();
+    public BookListRoot createBookListRoot() {
+        return new BookListRoot();
     }
 
     /**

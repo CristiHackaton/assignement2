@@ -1,17 +1,16 @@
 package com.model.book;
 
-
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for book complex type.
+ * <p>
+ * Java class for book complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="book">
@@ -33,11 +32,11 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "book", propOrder = {
-    "title",
-    "author",
-    "genre",
-    "quantity",
-    "price"
+        "title",
+        "author",
+        "genre",
+        "quantity",
+        "price"
 })
 public class Book {
 
@@ -53,10 +52,8 @@ public class Book {
     /**
      * Gets the value of the title property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
     public String getTitle() {
         return title;
@@ -66,21 +63,18 @@ public class Book {
      * Sets the value of the title property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setTitle(String value) {
+    public void setTitle(final String value) {
         this.title = value;
     }
 
     /**
      * Gets the value of the author property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
     public String getAuthor() {
         return author;
@@ -90,21 +84,18 @@ public class Book {
      * Sets the value of the author property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setAuthor(String value) {
+    public void setAuthor(final String value) {
         this.author = value;
     }
 
     /**
      * Gets the value of the genre property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return possible object is {@link String }
+     * 
      */
     public String getGenre() {
         return genre;
@@ -114,11 +105,10 @@ public class Book {
      * Sets the value of the genre property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *            allowed object is {@link String }
+     * 
      */
-    public void setGenre(String value) {
+    public void setGenre(final String value) {
         this.genre = value;
     }
 
@@ -134,7 +124,7 @@ public class Book {
      * Sets the value of the quantity property.
      * 
      */
-    public void setQuantity(int value) {
+    public void setQuantity(final int value) {
         this.quantity = value;
     }
 
@@ -150,8 +140,13 @@ public class Book {
      * Sets the value of the price property.
      * 
      */
-    public void setPrice(double value) {
+    public void setPrice(final double value) {
         this.price = value;
+    }
+
+    @Override
+    public String toString() {
+        return title;
     }
 
 }

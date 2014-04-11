@@ -8,17 +8,17 @@ import com.model.user.User;
 import com.model.user.UserListRoot;
 
 public class UserXMLHandler extends AbstractXMLHandler {
-    private static String XSD_PATH = "D://master//PS//As//BookStore//src//com//resources//userSchema.xsd";
-    private static String XML_FILE_PATH = "D://master//PS//As//BookStore//src//com//resources//data//users.xml";
-  
-    public UserXMLHandler(){
+    private static String XSD_PATH = "src//com//resources//userSchema.xsd";
+    private static String XML_FILE_PATH = "src//com//resources//data//users.xml";
+
+    public UserXMLHandler() {
         setXmlDataFile(XML_FILE_PATH);
         setXsdPath(XSD_PATH);
         classToHandle = UserListRoot.class;
     }
 
     public static void main(final String args[]) {
-    	UserListRoot list = new UserListRoot();
+        UserListRoot list = new UserListRoot();
         User u = new User();
         u.setName("danny");
         u.setPassword("danny");
@@ -32,12 +32,12 @@ public class UserXMLHandler extends AbstractXMLHandler {
         u2.setType(0);
         list.getUserList().add(u);
         list.getUserList().add(u2);
-    
+
         UserXMLHandler usHandler = new UserXMLHandler();
         try {
-//            usHandler.writeToFile(list);
-        	UserListRoot list2 = (UserListRoot) usHandler.readFromFile();
-        	System.out.println(list2.getUserList().get(0).getName());
+            //            usHandler.writeToFile(list);
+            UserListRoot list2 = (UserListRoot)usHandler.readFromFile();
+            System.out.println(list2.getUserList().get(0).getName());
         } catch (JAXBException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

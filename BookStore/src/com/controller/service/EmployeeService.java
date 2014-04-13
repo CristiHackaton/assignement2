@@ -29,6 +29,7 @@ public class EmployeeService extends UserService {
 	public EmployeeService(){
 		SellXMLHandler sl=new SellXMLHandler();
 		BookXMLHandler bk=new BookXMLHandler();
+		sellFactory = new ObjectFactory();
 		try {
 			sellList=(SellListRoot)sl.readFromFile();
 			bookList=(BookListRoot)bk.readFromFile();
@@ -38,6 +39,9 @@ public class EmployeeService extends UserService {
 		} catch (SAXException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		if (sellList == null){
+			sellList = sellFactory.createSellListRoot();
 		}
 	
 	}
@@ -72,6 +76,7 @@ public class EmployeeService extends UserService {
 
 	public boolean sellBook(Book bookTOsell, int nrSellBooks, String buyer) {
 		int index = bookList.getBookList().indexOf(bookTOsell);
+		
 		int remainingBook = bookList.getBookList().get(index).getQuantity()
 				- nrSellBooks;
 		bookList.getBookList().get(index).setQuantity(remainingBook);
@@ -97,6 +102,43 @@ public class EmployeeService extends UserService {
 		}
 
 		sellList.getSellList().add(sale);
+		
+		SellXMLHandler sl=new SellXMLHandler();
+		try {
+			sl.writeToFile(sellList);
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return true;
 	}
+	/**
+	 * @return the sellList
+	 */
+	public SellListRoot getSellList() {
+		return sellList;
+	}
+	/**
+	 * @param sellList the sellList to set
+	 */
+	public void setSellList(SellListRoot sellList) {
+		this.sellList = sellList;
+	}
+	/**
+	 * @return the bookList
+	 */
+	public BookListRoot getBookList() {
+		return bookList;
+	}
+	/**
+	 * @param bookList the bookList to set
+	 */
+	public void setBookList(BookListRoot bookList) {
+		this.bookList = bookList;
+	}
+	
+	
 }

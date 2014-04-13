@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sellListRoot>
+    <sellList>
+        <book>
+            <title>Book2</title>
+            <author>Book2</author>
+            <genre>Book2</genre>
+            <quantity>1</quantity>
+            <price>22.0</price>
+        </book>
+        <buyer>aaa</buyer>
+        <date>2014-04-13+03:00</date>
+    </sellList>
+</sellListRoot>

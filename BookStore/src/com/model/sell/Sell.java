@@ -121,4 +121,8 @@ public class Sell {
         this.date = value;
     }
 
+	public String toReport() {
+		return "Sell [book=" + book.toReport() + ", buyer=" + buyer + ", date=" + date
+				+ "]";
+	}
 }

@@ -62,19 +62,27 @@ public class UserScreen extends JFrame{
 						//0 is admin
 						AdminScreen adm=new AdminScreen();
 						adm.setVisible(true);
+						closeWindow();
 						
 					}else if(user.getType()==1){
-						//1 is employee
-						System.out.println("fereastra employee");
+						EmployeeScreen emp=new EmployeeScreen();
+						emp.setVisible(true);
+						closeWindow();
 					}
 				}else {
 					JOptionPane.showMessageDialog(null, "The user doesn`t exist!");
 				}
 			}
+
 		});
 		butonLogin.setBounds(10, 80, 89, 23);
 		panel.add(butonLogin);
 		setFont(new Font("Cooper Black", Font.PLAIN, 12));
 		setTitle("Hello User!");
+	}
+	private void closeWindow() {
+		this.setVisible(false);
+		this.dispose();
+		
 	}
 }

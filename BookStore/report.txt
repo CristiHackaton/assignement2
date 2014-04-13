@@ -1,0 +1,1 @@
+Book [title=Book1, author=Book1, genre=Book1, quantity=0, price=12.0]

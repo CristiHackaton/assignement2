@@ -12,4 +12,10 @@
         <type>0</type>
         <phoneNumber>123243</phoneNumber>
     </userList>
+    <userList>
+        <name>empl1</name>
+        <password>emp1</password>
+        <type>1</type>
+        <phoneNumber>123456</phoneNumber>
+    </userList>
 </userListRoot>

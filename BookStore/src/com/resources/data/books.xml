@@ -11,7 +11,7 @@
         <title>Book1</title>
         <author>Book1</author>
         <genre>Book1</genre>
-        <quantity>12</quantity>
+        <quantity>0</quantity>
         <price>12.0</price>
     </bookList>
 </bookListRoot>

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <bookListRoot>
     <bookList>
-        <title>as</title>
-        <author>as</author>
-        <genre>as</genre>
-        <quantity>3</quantity>
+        <title>Book2</title>
+        <author>Book2</author>
+        <genre>Book2</genre>
+        <quantity>32</quantity>
         <price>22.0</price>
+    </bookList>
+    <bookList>
+        <title>Book1</title>
+        <author>Book1</author>
+        <genre>Book1</genre>
+        <quantity>0</quantity>
+        <price>12.0</price>
     </bookList>
 </bookListRoot>

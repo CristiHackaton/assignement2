@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sellListRoot>
+    <sellList>
+        <book>
+            <title>Book2</title>
+            <author>Book2</author>
+            <genre>Book2</genre>
+            <quantity>1</quantity>
+            <price>22.0</price>
+        </book>
+        <buyer>aaa</buyer>
+        <date>2014-04-13+03:00</date>
+    </sellList>
+    <sellList>
+        <book>
+            <title>Book2</title>
+            <author>Book2</author>
+            <genre>Book2</genre>
+            <quantity>1</quantity>
+            <price>22.0</price>
+        </book>
+        <buyer>ddd</buyer>
+        <date>2014-04-13+03:00</date>
+    </sellList>
+    <sellList>
+        <book>
+            <title>ana</title>
+            <author>ion tudor</author>
+            <genre>sf</genre>
+            <quantity>1</quantity>
+            <price>11.0</price>
+        </book>
+        <buyer>ana</buyer>
+        <date>2014-04-14+03:00</date>
+    </sellList>
+    <sellList>
+        <book>
+            <title>ana</title>
+            <author>ion tudor</author>
+            <genre>sf</genre>
+            <quantity>1</quantity>
+            <price>11.0</price>
+        </book>
+        <buyer>dgd</buyer>
+        <date>2014-04-14+03:00</date>
+    </sellList>
+</sellListRoot>

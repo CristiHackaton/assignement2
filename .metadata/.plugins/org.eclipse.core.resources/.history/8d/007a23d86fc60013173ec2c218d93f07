@@ -1,0 +1,11 @@
+package gui;
+
+public class Controler {
+	public static void main(String args[]){
+		//LoginScreen login=new LoginScreen();
+		//AdminScreen login=new AdminScreen(null);
+		EmployeeScreen login=new EmployeeScreen();
+		login.setSize(1367,763);
+		login.setVisible(true);
+	}
+}

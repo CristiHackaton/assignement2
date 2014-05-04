@@ -17,11 +17,14 @@ import com.model.user.User;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Rectangle;
 
 public class UserScreen extends JFrame{
 	private JPasswordField passwordField;
 	private JTextField userName;
 	public UserScreen() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(new Rectangle(0, 0, 1365, 799));
 		getContentPane().setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		getContentPane().setForeground(new Color(255, 255, 204));
 		getContentPane().setLayout(null);

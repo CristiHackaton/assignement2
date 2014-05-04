@@ -14,6 +14,7 @@ import javax.swing.JButton;
 
 import com.controller.service.EmployeeService;
 import com.model.book.Book;
+import java.awt.Rectangle;
 
 public class EmployeeScreen extends JFrame {
 	private JTextField buyer;
@@ -22,11 +23,12 @@ public class EmployeeScreen extends JFrame {
 	private JList list;
 	private JScrollPane listPanel;
 	public EmployeeScreen() {
+		setBounds(new Rectangle(0, 0, 1365, 799));
 		EmployeeService empService = new EmployeeService();
 		getContentPane().setLayout(null);
 		
 		panelVizualizare = new JPanel();
-//		list= new JList<>();
+		//list= new JList<>();
 		list = new JList(new BooksListModel(empService.getBookList()));
 		listPanel = new JScrollPane(list);
 		listPanel.setBounds(10, 10, 320, 500);
@@ -56,6 +58,22 @@ public class EmployeeScreen extends JFrame {
 		JButton btnSale = new JButton("Sale");
 		btnSale.setBounds(399, 94, 89, 23);
 		panelVizualizare.add(btnSale);
+		
+		JButton btnLogout = new JButton("Logout");
+		btnLogout.setBounds(1250, 11, 89, 23);
+		getContentPane().add(btnLogout);
+		
+		
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				closeScreen();
+				UserScreen us=new UserScreen();
+				us.setVisible(true);
+			}
+		});
 		btnSale.addActionListener(new ActionListener() {
 			
 			@Override
@@ -77,5 +95,9 @@ public class EmployeeScreen extends JFrame {
 			}
 		});
 	}
-
+	
+	public void closeScreen(){
+		this.setVisible(false);
+		this.dispose();
+	}
 }

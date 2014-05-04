@@ -1,7 +1,0 @@
-package com.view;
-
-import javax.swing.JFrame;
-
-public class UserScreen extends JFrame{
-
-}

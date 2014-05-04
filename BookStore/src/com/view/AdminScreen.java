@@ -24,6 +24,7 @@ import com.controller.Reports;
 import com.controller.service.AdminService;
 import com.model.book.Book;
 import com.model.user.User;
+import java.awt.Rectangle;
 
 public class AdminScreen extends JFrame {
 	private JTextField title;
@@ -62,6 +63,7 @@ public class AdminScreen extends JFrame {
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
 
 	public AdminScreen() {
+		setBounds(new Rectangle(0, 0, 1365, 799));
 		getContentPane().setLayout(null);
 		panelVizualizare = new JPanel();
 		panelUserAdd = new JPanel();
@@ -153,6 +155,21 @@ public class AdminScreen extends JFrame {
 
 		JMenuItem mntmGenerateReport = new JMenuItem("Generate report");
 		mnReport.add(mntmGenerateReport);
+		
+		JButton btnLogout = new JButton("Logout");
+		btnLogout.setBounds(1260, 0, 89, 23);
+		getContentPane().add(btnLogout);
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				closeScreen();
+				UserScreen us=new UserScreen();
+				us.setVisible(true);
+				
+			}
+		});
 		mntmGenerateReport.addActionListener(new ActionListener() {
 			
 			@Override
@@ -582,5 +599,10 @@ public class AdminScreen extends JFrame {
 				price.setText("");
 			}
 		});
+	}
+	
+	public void closeScreen(){
+		this.setVisible(false);
+		this.dispose();
 	}
 }
